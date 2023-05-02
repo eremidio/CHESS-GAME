@@ -41,4 +41,3 @@ credits();
 end_text();
 return 0;
           }
-
