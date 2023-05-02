@@ -85,7 +85,7 @@ if(abs(x1-x2)==2 && abs(y1-y2)==1){
 if(board[x2][y2]!="PB" && board[x2][y2]!="TB" && board[x2][y2]!="CB" && board[x2][y2]!="BB" && board[x2][y2]!="DB" && board[x2][y2]!="RB")
 return true;
                                   };
-if(abs(x1-x2)==2 && abs(y1-y2)==1){
+if(abs(x1-x2)==1 && abs(y1-y2)==2){
 if(board[x2][y2]!="PB" && board[x2][y2]!="TB" && board[x2][y2]!="CB" && board[x2][y2]!="BB" && board[x2][y2]!="DB" && board[x2][y2]!="RB")
 return true;
                                   };
@@ -106,7 +106,7 @@ if(abs(x1-x2)==2 && abs(y1-y2)==1){
 if(board[x2][y2]!="PP" && board[x2][y2]!="TP" && board[x2][y2]!="CP" && board[x2][y2]!="BP" && board[x2][y2]!="DP" && board[x2][y2]!="RP")
 return true;
                                   };
-if(abs(x1-x2)==2 && abs(y1-y2)==1){
+if(abs(x1-x2)==1 && abs(y1-y2)==2){
 if(board[x2][y2]!="PP" && board[x2][y2]!="TP" && board[x2][y2]!="CP" && board[x2][y2]!="BP" && board[x2][y2]!="DP" && board[x2][y2]!="RP")
 return true;
                                   };
@@ -141,7 +141,7 @@ return false;
                                                                                                                    };
 //DIAGONAL SUPERIOR DIREITA(+1, +1)
 if(gap_v>0 && gap_h>0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1+i]!="  "){
 return false;
                            };
@@ -150,7 +150,7 @@ return false;
 
 //DIAGONAL SUPERIOR ESQUERDA(+1, -1)
 if(gap_v>0 && gap_h<0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1-i]!="  "){
 return false;
                            };
@@ -159,7 +159,7 @@ return false;
 
 //DIAGONAL INFERIOR DIREITA(-1, +1)
 if(gap_v<0 && gap_h>0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1+i]!="  "){
 return false;
                            };
@@ -168,7 +168,7 @@ return false;
 
 //DIAGONAL INFERIOR ESQUERDA(-1, -1)
 if(gap_v<0 && gap_h>0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1-i]!="  "){
 return false;
                            };
@@ -203,7 +203,7 @@ return false;
                                                                                                                    };
 //DIAGONAL SUPERIOR DIREITA(+1, +1)
 if(gap_v>0 && gap_h>0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1+i]!="  "){
 return false;
                            };
@@ -212,7 +212,7 @@ return false;
 
 //DIAGONAL SUPERIOR ESQUERDA(+1, -1)
 if(gap_v>0 && gap_h<0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1-i]!="  "){
 return false;
                            };
@@ -221,7 +221,7 @@ return false;
 
 //DIAGONAL INFERIOR DIREITA(-1, +1)
 if(gap_v<0 && gap_h>0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1+i]!="  "){
 return false;
                            };
@@ -230,7 +230,7 @@ return false;
 
 //DIAGONAL INFERIOR ESQUERDA(-1, -1)
 if(gap_v<0 && gap_h>0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1-i]!="  "){
 return false;
                            };
@@ -266,7 +266,7 @@ return false;
 
 //CIMA(+1, 0)
 if(gap_v>0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1]!="  "){
 return false;
                          };
@@ -283,7 +283,7 @@ return false;
 
 //DIREITA(0, +1)
 if(gap_h>0){
-for(i=0; i<gap_h; ++i){
+for(i=1; i<gap_h; ++i){
 if(board[x1][y1+i]!="  "){
 return false;
                          };
@@ -291,7 +291,7 @@ return false;
            };
 //ESQUERDA(0, -1)
 if(gap_h<0){
-for(i=0; i<abs(gap_h); ++i){
+for(i=1; i<abs(gap_h); ++i){
 if(board[x1][y1-i]!="  "){
 return false;
                          };
@@ -326,7 +326,7 @@ return false;
 
 //CIMA(+1, 0)
 if(gap_v>0){
-for(i=0; i<gap_v; ++i){
+for(i=1; i<gap_v; ++i){
 if(board[x1+i][y1]!="  "){
 return false;
                          };
@@ -334,7 +334,7 @@ return false;
            };
 //BAIXO(-1, 0)
 if(gap_v<0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1]!="  "){
 return false;
                          };
@@ -343,7 +343,7 @@ return false;
 
 //DIREITA(0, +1)
 if(gap_h>0){
-for(i=0; i<gap_h; ++i){
+for(i=1; i<gap_h; ++i){
 if(board[x1][y1+i]!="  "){
 return false;
                          };
@@ -351,7 +351,7 @@ return false;
            };
 //ESQUERDA(0, -1)
 if(gap_h<0){
-for(i=0; i<abs(gap_h); ++i){
+for(i=1; i<abs(gap_h); ++i){
 if(board[x1][y1-i]!="  "){
 return false;
                          };
@@ -499,10 +499,9 @@ return black_pin;
 bool chess_game::white_en_passant_checker(int x1, int y1, int x2, int y2){
 /*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS BRANCAS: PEÃO DAS NEGRAS ->(-2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if(x1==6 && x2==4 && y1==y2 && board[x1][y1]=="PP"){
-if(board[x2][y2+1]=="PB" || board[x2][y2+1]=="PB")
+if(abs(x2-x1)==2 && board[x1][y1]=="PP" && (board[x2][y2+1]=="PB" || board[x2][y2+1]=="PB")){
 white_en_passant=true;
-                                                   };
+                                                                                            };
 
 return white_en_passant;
                                                                          };
@@ -510,7 +509,7 @@ return white_en_passant;
 bool chess_game::black_en_passant_checker(int x1, int y1, int x2, int y2){
 /*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS NEGRAS: PEÃO DAS BRANCAS ->(+2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if(x1==1 && x2==3 && y1==y2 && board[x1][y1]=="PB"){
+if(abs(x2-x1)==2 && board[x1][y1]=="PB"){
 if(board[x2][y2+1]=="PP" || board[x2][y2+1]=="PP")
 black_en_passant=true;
                                                    };
@@ -569,8 +568,8 @@ test2=true;
 
 //FINALIZANDO O ROQUE SE A CONDIÇÃO ACIMA FOR SATISFEITA
 if(test2==true){
-board[0][4]="TB";
-board[0][7]=="  ";
+board[0][5]="TB";
+board[0][7]="  ";
 white_castle=true;
 reset_board();
 move_list.push_back("o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
@@ -636,8 +635,8 @@ test2=true;
 
 //FINALIZANDO O ROQUE SE A CONDIÇÃO ACIMA FOR SATISFEITA
 if(test2==true){
-board[7][4]="TP";
-board[7][7]=="  ";
+board[7][5]="TP";
+board[7][7]="  ";
 white_castle=true;
 reset_board();
 move_list.push_back("o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
@@ -706,7 +705,7 @@ test2=true;
 
 //FINALIZANDO O ROQUE SE A CONDIÇÃO ACIMA FOR SATISFEITA
 if(test2==true){
-board[0][4]="TB";
+board[0][3]="TB";
 board[0][0]="  ";
 white_castle=true;
 reset_board();
@@ -773,7 +772,7 @@ test2=true;
 
 //FINALIZANDO O ROQUE SE A CONDIÇÃO ACIMA FOR SATISFEITA
 if(test2==true){
-board[7][4]="TB";
+board[7][3]="TB";
 board[7][0]="  ";
 black_castle=true;
 reset_board();
@@ -988,6 +987,9 @@ white_king_status();
 
 //EM CASO DE O REI DAS BRANCAS NÃO ESTAR EM CHEQUE FINALIZAR O LANCE
 if(white_king_in_check==false){
+//TESTE4, USE UM /**/ APÓS O TESTE
+/*cout<<"OK\n";*/
+
 //ATUALIZAR O TABULEIRO SECUNDÁRIO
 reset_board();
 
@@ -998,7 +1000,7 @@ else if(board[row1][column1]!="PB")
 nor_pawn_capture++;
 
 //VERIFICANDO SE HÁ PROMOÇÃO DE PEÃO DAS BRANCAS
-if(board[row1][column1]=="PB" && row2==7)
+if(board[row2][column2]=="PB" && row2==7)
 promote_white_pawn();
 
 //OBSERVANDO SE AS NEGRAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS BRANCAS
@@ -1130,6 +1132,9 @@ black_king_status();
 
 //EM CASO DE O REI DAS NEGRAS NÃO ESTAR EM CHEQUE FINALIZAR O LANCE
 if(black_king_in_check==false){
+//TESTE3, USE UM /**/ APÓS O TESTE
+/*cout<<"OK black\n";*/
+
 //ATUALIZAR O TABULEIRO SECUNDÁRIO
 reset_board();
 
@@ -1140,13 +1145,16 @@ else if(board[row1][column1]!="PP")
 nor_pawn_capture++;
 
 //VERIFICANDO SE HÁ PROMOÇÃO DE PEÃO DAS NEGRAS
-if(board[row1][column1]=="PP" && row2==0)
+if(board[row2][column2]=="PP" && row2==0)
 promote_black_pawn();
 
 
 //OBSERVANDO SE AS BRANCAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS NEGRAS
 bool test3 = white_en_passant_checker(row1, column1, row2, column2);
 black_en_passant=false;//ATUALIZANDO VARIÁVEL
+
+//TESTE5, USE UM /**/ APÓS O TESTE
+/*cout<<"white_en_passant"<< white_en_passant<<"\n";*/
 
 //CHECANDO SE HOUVE CAPTURA DE PEÇAS DAS BRANCAS
 white_evaluation2=evaluate_black_pieces();
@@ -1173,4 +1181,3 @@ goto black_move;
 
                              };
                                 };//
-
