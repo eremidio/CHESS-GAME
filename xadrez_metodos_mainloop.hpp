@@ -29,7 +29,8 @@ if(checkmate==true)
 break;
 //EMPATE
 //PROPONDO EMPATE POR REPETIÇÃO
-cout<<":::";
+cout<<"::: (Pressione enter para continuar ou digite 'e' para propor empate) ";
+int flag1=cin.get();
 char wd = getchar();
 if(wd=='e')
 common_agreement_draw();
@@ -53,7 +54,8 @@ if(checkmate==true)
 break;
 //EMPATE
 //PROPONDO EMPATE POR REPETIÇÃO
-cout<<":::";
+cout<<"::: (Pressione enter para continuar ou digite 'e' para propor empate) ";
+int flag2=cin.get();
 char bd = getchar();
 if(bd=='e')
 common_agreement_draw();
