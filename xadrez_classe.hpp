@@ -183,4 +183,3 @@ black_castle_checker2=true;
 chess_game::~chess_game(){
 move_list.clear();
                          };
-
