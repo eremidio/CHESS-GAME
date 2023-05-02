@@ -309,4 +309,3 @@ draw_game=true;
 void chess_game::draw_warning(){
 cout<<"Jogo terminou empatado!\n";
                                };
-
