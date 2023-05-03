@@ -891,14 +891,15 @@ if(white_king_in_check==true){
 white_check_warning();
 //CHECANDO O CHEQUE MATE
 bool end_game=white_checkmate_checker();//VARIÁVEL LOCAL
-if(checkmate=true){
+if(checkmate==true){
 checkmate_warning();
 return;
-                  };
+                   };
                              };
 
 //CASO NÃO SEJA CHEQUE MATE O JOGADOR DE BRANCAS REALIZA O SEU LANCE
 white_move:
+cout<<"Vez das brancas.\n";
 //AVALIANDO O VALOR DAS PEÇAS DAS NEGRAS ANTES DO MOVIMENTO DAS BRANCAS
 black_evaluation1=evaluate_black_pieces();
 
@@ -1005,6 +1006,7 @@ promote_white_pawn();
 
 //OBSERVANDO SE AS NEGRAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS BRANCAS
 bool test3 = black_en_passant_checker(row1, column1, row2, column2);
+if(white_en_passant==true)
 white_en_passant=false;//ATUALIZANDO VARIÁVEL
 
 //CHECANDO SE HOUVE CAPTURA DE PEÇAS DAS NEGRAS
@@ -1044,7 +1046,7 @@ if(black_king_in_check==true){
 black_check_warning();
 //CHECANDO O CHEQUE MATE
 bool end_game=black_checkmate_checker();//VARIÁVEL LOCAL
-if(checkmate=true){
+if(checkmate==true){
 checkmate_warning();
 return;
                   };
@@ -1052,6 +1054,7 @@ return;
 
 //CASO NÃO SEJA CHEQUE MATE O JOGADOR DE NEGRAS REALIZA O SEU LANCE
 black_move:
+cout<<"Vez das negras.\n";
 //AVALIANDO O VALOR DAS PEÇAS DAS BRANCAS ANTES DO MOVIMENTO DAS NEGRAS
 white_evaluation1=evaluate_white_pieces();
 
@@ -1113,6 +1116,11 @@ test2=validate_black_queen_move(row1, column1, row2, column2);
 if(board[row1][column1]=="RP")
 test2=validate_black_king_move(row1, column1, row2, column2);
 
+//TESTE USE UM /**/ APÓS O MESMO
+/*cout<<"test1 (pin): "<<test1<<"\n";
+cout<<"test2 (legal moves): "<<test2<<"\n";*/
+
+
 //CASO ALGUM DOS TESTES ACIMA FALHE, INFORMAR AO USUÁRIO
 if(test1==true || test2==false){
 cout<<"Movimento inválido!";
@@ -1133,7 +1141,7 @@ black_king_status();
 //EM CASO DE O REI DAS NEGRAS NÃO ESTAR EM CHEQUE FINALIZAR O LANCE
 if(black_king_in_check==false){
 //TESTE3, USE UM /**/ APÓS O TESTE
-/*cout<<"OK black\n";*/
+cout<<"OK black\n";
 
 //ATUALIZAR O TABULEIRO SECUNDÁRIO
 reset_board();
@@ -1151,6 +1159,7 @@ promote_black_pawn();
 
 //OBSERVANDO SE AS BRANCAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS NEGRAS
 bool test3 = white_en_passant_checker(row1, column1, row2, column2);
+if(black_en_passant==true)
 black_en_passant=false;//ATUALIZANDO VARIÁVEL
 
 //TESTE5, USE UM /**/ APÓS O TESTE
