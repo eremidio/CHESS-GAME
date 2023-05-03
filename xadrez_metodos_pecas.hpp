@@ -1141,7 +1141,7 @@ black_king_status();
 //EM CASO DE O REI DAS NEGRAS NÃO ESTAR EM CHEQUE FINALIZAR O LANCE
 if(black_king_in_check==false){
 //TESTE3, USE UM /**/ APÓS O TESTE
-cout<<"OK black\n";
+/*cout<<"OK black\n";*/
 
 //ATUALIZAR O TABULEIRO SECUNDÁRIO
 reset_board();
@@ -1166,7 +1166,7 @@ black_en_passant=false;//ATUALIZANDO VARIÁVEL
 /*cout<<"white_en_passant"<< white_en_passant<<"\n";*/
 
 //CHECANDO SE HOUVE CAPTURA DE PEÇAS DAS BRANCAS
-white_evaluation2=evaluate_black_pieces();
+white_evaluation2=evaluate_white_pieces();
 white_pieces_counter();
 
 //ATUALIZAR VARIÁVEIS QUE PERMITEM A REALIZAÇÃO DO ROQUE
