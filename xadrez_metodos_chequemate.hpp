@@ -684,3 +684,14 @@ return checkmate;
 void chess_game::checkmate_warning(){
 cout<<"Chequemate!!!\nFim de jogo.\n";
                                     };
+
+//****************************************************************************************************************************
+//FUNÇÃO QUE PERMITE A UM JOGADOR ABANDONAR O JOGO
+void chess_game::resignate(){
+string token;
+cout<<"Jogador você deseja abandonar o jogo?\n(Digite 's' para encerrar a partida ou 'n' para continuar)\n";
+cin>>token;
+if(token=="s")
+resignation=true;
+
+                            };
