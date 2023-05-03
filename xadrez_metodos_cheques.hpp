@@ -103,7 +103,7 @@ white_attacker="CP";
 
 //CHEQUES DE BISPO OU DAMA
 //DIAGONAL SUPERIOR DIREITA (+1, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row+i)>7 || (white_king_column+i)>7)
 break;
 if(board[white_king_row+i][white_king_column+i]!="BP" && board[white_king_row+i][white_king_column+i]!="DP" && board[white_king_row+i][white_king_column+i]!="  ")
@@ -118,7 +118,7 @@ break;
                   };
 
 //DIAGONAL SUPERIOR ESQUERDA (+1, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row+i)>7 || (white_king_column-i)<0)
 break;
 if(board[white_king_row+i][white_king_column-i]!="BP" && board[white_king_row+i][white_king_column-i]!="BP" && board[white_king_row+i][white_king_column-i]!="  ")
@@ -132,7 +132,7 @@ break;
                                                                                                             }; 
                   };
 //DIAGONAL INFERIOR DIREITA(-1, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row-i)<0 || (white_king_column+i)>7)
 break;
 if(board[white_king_row-i][white_king_column+i]!="BP" && board[white_king_row-i][white_king_column+i]!="DP" && board[white_king_row-i][white_king_column+i]!="  ")
@@ -147,7 +147,7 @@ break;
                   };
 
 //DIAGONA INFERIOR ESQUERDA (-1, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row-i)<0 || (white_king_column-i)<0)
 break;
 if(board[white_king_row-i][white_king_column-i]!="BP" && board[white_king_row-i][white_king_column-i]!="DP" && board[white_king_row-i][white_king_column-i]!="  ")
@@ -163,7 +163,7 @@ break;
 
 //CHEQUES DE TORRE OU DAMA 
 //CIMA (+1, 0)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row+i)>7)
 break;
 if(board[white_king_row+i][white_king_column]!="TP" && board[white_king_row+i][white_king_column]!="DP" && board[white_king_row+i][white_king_column]!="  ")
@@ -178,7 +178,7 @@ break;
 
                   };
 //BAIXO (-1, 0)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_row-i)<0)
 break;
 if(board[white_king_row-i][white_king_column]!="TP" && board[white_king_row+i][white_king_column]!="DP" && board[white_king_row-i][white_king_column]!="  ")
@@ -192,7 +192,7 @@ break;
                                                                                                         };
                   };
 //DIREITA (0, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_column+i)>7)
 break;
 if(board[white_king_row][white_king_column+i]!="TP" && board[white_king_row][white_king_column+i]!="DP" && board[white_king_row][white_king_column+i]!="  ")
@@ -207,7 +207,7 @@ break;
 
                   };
 //ESQUERDA (0, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((white_king_column-i)<0)
 break;
 if(board[white_king_row][white_king_column-i]!="TP" && board[white_king_row][white_king_column-i]!="DP" && board[white_king_row][white_king_column-i]!="  ")
@@ -316,7 +316,7 @@ black_attacker="CB";
 
 //CHEQUES DE BISPO OU DAMA
 //DIAGONAL SUPERIOR DIREITA (+1, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row+i)>7 || (black_king_column+i)>7)
 break;
 if(board[black_king_row+i][black_king_column+i]!="BB" && board[black_king_row+i][black_king_column+i]!="DB" && board[black_king_row+i][black_king_column+i]!="  ")
@@ -331,7 +331,7 @@ break;
                   };
 
 //DIAGONAL SUPERIOR ESQUERDA (+1, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row+i)>7 || (black_king_column-i)<0)
 break;
 if(board[black_king_row+i][black_king_column-i]!="BB" && board[black_king_row+i][black_king_column-i]!="DB" && board[black_king_row+i][black_king_column-i]!="  ")
@@ -345,7 +345,7 @@ break;
                                                                                                             }; 
                   };
 //DIAGONAL INFERIOR DIREITA(-1, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row-i)<0 || (black_king_column+i)>7)
 break;
 if(board[black_king_row-i][black_king_column+i]!="BB" && board[black_king_row-i][black_king_column+i]!="DB" && board[black_king_row-i][black_king_column+i]!="  ")
@@ -360,7 +360,7 @@ break;
                   };
 
 //DIAGONA INFERIOR ESQUERDA (-1, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row-i)<0 || (black_king_column-i)<0)
 break;
 if(board[black_king_row-i][black_king_column-i]!="BB" && board[black_king_row-i][black_king_column-i]!="DB" && board[black_king_row-i][black_king_column-i]!="  ")
@@ -376,7 +376,7 @@ break;
 
 //CHEQUES DE TORRE OU DAMA 
 //CIMA (+1, 0)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row+i)>7)
 break;
 if(board[black_king_row+i][black_king_column]!="TB" && board[black_king_row+i][black_king_column]!="DB" && board[black_king_row+i][black_king_column]!="  ")
@@ -391,7 +391,7 @@ break;
 
                   };
 //BAIXO (-1, 0)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_row-i)<0)
 break;
 if(board[black_king_row-i][black_king_column]!="TB" && board[black_king_row+i][black_king_column]!="DB" && board[black_king_row-i][black_king_column]!="  ")
@@ -405,7 +405,7 @@ break;
                                                                                                         };
                   };
 //DIREITA (0, +1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_column+i)>7)
 break;
 if(board[black_king_row][black_king_column+i]!="TB" && board[black_king_row][black_king_column+i]!="DB" && board[black_king_row][black_king_column+i]!="  ")
@@ -420,7 +420,7 @@ break;
 
                   };
 //ESQUERDA (0, -1)
-for(i=0; i<8; i++){
+for(i=1; i<8; i++){
 if((black_king_column-i)<0)
 break;
 if(board[black_king_row][black_king_column-i]!="TB" && board[black_king_row][black_king_column-i]!="DB" && board[black_king_row][black_king_column-i]!="  ")
