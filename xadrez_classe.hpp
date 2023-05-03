@@ -27,6 +27,7 @@ int white_king_row, white_king_column, white_attacker_row, white_attacker_column
 int black_king_row, black_king_column, black_attacker_row, black_attacker_column;//COORDENADAS USADAS ṔARA CHECAR SE O REI DAS NEGRAS ESTÁ EM CHEQUE
 bool checkmate; //VARIÁVEL QUE DETERMINAR A CONDIÇÃO DE CHEQUE MATE
 bool draw_game;//VARIÁVEL QUE VERFICA SE HOUVE EMPATE NO JOGO
+bool resignation;//FUNÇÃO QUE PERMITE AO USUÁRIO DESISTIR DE UMA PARTIDA
 bool white_en_passant, black_en_passant;//VARIÁVEIS PARA PERMITIR A CAPTURA EN PASSANT
 bool white_castle, black_castle;//VARIÁVEIS QUE DEFINEM SE O ROQUE FOI OU NÃO REALIZADO PELOS JOGADORES
 bool white_castle_checker1, white_castle_checker2, black_castle_checker1, black_castle_checker2;//VARIÁVEIS QUE CHECAM SE É POSSÍVEL OU NÃO FAZER O ROQUE CURTO(:-->1) OU LONGO(:-->2)
@@ -99,7 +100,6 @@ void white_to_move();
 void black_to_move();
 
 
-
 //CHEQUE MATE
 bool white_check_piece_escape();
 bool black_check_piece_escape();
@@ -117,6 +117,9 @@ void white_stalemate_draw();//EMPATE POR AFOGAMENTO
 void black_stalemate_draw();//   "    "      "   
 void insufficient_material_draw();//EMPATE POR FALTA DE MATERIAL
 void draw_warning();//FUNÇÃO QUE ALERTA O USUÁRIO DA OCORRÊNCIA DE EMPATE
+
+//FUNÇÃO QUE PERMITE AO JOGADOR ENCERRAR O JOGO POR DESISTÊNCIA
+void resignate();
 
 //SETUP E LOOP PRINCIPAL DO JOGO
 void setup_game();
@@ -176,6 +179,7 @@ white_castle_checker1=true;
 white_castle_checker2=true;
 black_castle_checker1=true;
 black_castle_checker2=true;
+resignation=false;
 
                                    };
 
