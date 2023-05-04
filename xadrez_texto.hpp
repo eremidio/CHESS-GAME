@@ -65,17 +65,17 @@ printf("\033[95m\nEscrito por Elias Rodrigues Emídio.\n\033[0m");
 
 void end_text(){
 
-printf("\033[34m\033[06m\033[01m  OOOOO  BBBBB   RRRRRR  IIIII   GGGG    AAA   DDDDD    OOOOO     PPPPPP   OOOOO  RRRRRR  \n\033[0m");        
-printf("\033[34m\033[06m\033[01m OO   OO BB   B  RR   RR  III   GG  GG  AAAAA  DD  DD  OO   OO    PP   PP OO   OO RR   RR \n\033[0m");        
-printf("\033[34m\033[06m\033[01m OO   OO BBBBBB  RRRRRR   III  GG      AA   AA DD   DD OO   OO    PPPPPP  OO   OO RRRRRR  \n\033[0m");        
-printf("\033[34m\033[06m\033[01m OO   OO BB   BB RR  RR   III  GG   GG AAAAAAA DD   DD OO   OO    PP      OO   OO RR  RR  \n\033[0m");        
-printf("\033[34m\033[06m\033[01m  OOOO0  BBBBBB  RR   RR IIIII  GGGGGG AA   AA DDDDDD   OOOO0     PP       OOOO0  RR   RR \n\n\033[0m");        
+printf("\033[34m\033[05m\033[01m  OOOOO  BBBBB   RRRRRR  IIIII   GGGG    AAA   DDDDD    OOOOO     PPPPPP   OOOOO  RRRRRR  \n\033[0m");        
+printf("\033[34m\033[05m\033[01m OO   OO BB   B  RR   RR  III   GG  GG  AAAAA  DD  DD  OO   OO    PP   PP OO   OO RR   RR \n\033[0m");        
+printf("\033[34m\033[05m\033[01m OO   OO BBBBBB  RRRRRR   III  GG      AA   AA DD   DD OO   OO    PPPPPP  OO   OO RRRRRR  \n\033[0m");        
+printf("\033[34m\033[05m\033[01m OO   OO BB   BB RR  RR   III  GG   GG AAAAAAA DD   DD OO   OO    PP      OO   OO RR  RR  \n\033[0m");        
+printf("\033[34m\033[05m\033[01m  OOOO0  BBBBBB  RR   RR IIIII  GGGGGG AA   AA DDDDDD   OOOO0     PP       OOOO0  RR   RR \n\n\033[0m");        
                                                                                          
-printf("\033[34m\033[06m\033[01m     JJJ  OOOOO    GGGG    AAA   RRRRRR     !!! !!! !!!                                  \n\033[0m");        
-printf("\033[34m\033[06m\033[01m     JJJ OO   OO  GG  GG  AAAAA  RR   RR    !!! !!! !!!                                   \n\033[0m");        
-printf("\033[34m\033[06m\033[01m     JJJ OO   OO GG      AA   AA RRRRRR     !!! !!! !!!                                   \n\033[0m");        
-printf("\033[34m\033[06m\033[01m JJ  JJJ OO   OO GG   GG AAAAAAA RR  RR                                                   \n\033[0m");        
-printf("\033[34m\033[06m\033[01m  JJJJJ   OOOO0   GGGGGG AA   AA RR   RR    !!! !!! !!!  \n\n\033[0m");        
+printf("\033[34m\033[05m\033[01m     JJJ  OOOOO    GGGG    AAA   RRRRRR     !!! !!! !!!                                  \n\033[0m");        
+printf("\033[34m\033[05m\033[01m     JJJ OO   OO  GG  GG  AAAAA  RR   RR    !!! !!! !!!                                   \n\033[0m");        
+printf("\033[34m\033[05m\033[01m     JJJ OO   OO GG      AA   AA RRRRRR     !!! !!! !!!                                   \n\033[0m");        
+printf("\033[34m\033[05m\033[01m JJ  JJJ OO   OO GG   GG AAAAAAA RR  RR                                                   \n\033[0m");        
+printf("\033[34m\033[05m\033[01m  JJJJJ   OOOO0   GGGGGG AA   AA RR   RR    !!! !!! !!!  \n\n\033[0m");        
               };
 
 
