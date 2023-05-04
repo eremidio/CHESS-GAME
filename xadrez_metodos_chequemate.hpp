@@ -338,8 +338,9 @@ if(board[i][j]=="PB"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool white_pawn_move_test=validate_white_pawn_move(i, j, k, l);
-if(white_pawn_move_test==true){
+bool white_pawn_move_test1=validate_white_pawn_move(i, j, k, l);
+bool white_pawn_move_test2=white_piece_pinned(i, j, k, l);
+if(white_pawn_move_test1==true && white_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -354,7 +355,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                };
 
                   };
                   };
@@ -364,8 +365,9 @@ if(board[i][j]=="CB"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool white_knight_move_test=validate_white_knight_move(i, j, k, l);
-if(white_knight_move_test==true){
+bool white_knight_move_test1=validate_white_knight_move(i, j, k, l);
+bool white_knight_move_test2=white_piece_pinned(i, j, k, l);
+if(white_knight_move_test1==true && white_knight_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -391,8 +393,9 @@ if(board[i][j]=="BB"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool white_bishop_move_test=validate_white_bishop_move(i, j, k, l);
-if(white_bishop_move_test==true){
+bool white_bishop_move_test1=validate_white_bishop_move(i, j, k, l);
+bool white_bishop_move_test2=white_piece_pinned(i, j, k, l);
+if(white_bishop_move_test1==true && white_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -407,7 +410,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                  };
 
                   };
                   };
@@ -418,8 +421,9 @@ if(board[i][j]=="TB"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool white_rook_move_test=validate_white_rook_move(i, j, k, l);
-if(white_rook_move_test==true){
+bool white_rook_move_test1=validate_white_rook_move(i, j, k, l);
+bool white_rook_move_test2=white_piece_pinned(i, j, k, l);
+if(white_rook_move_test1==true && white_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -434,7 +438,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                               };
 
                   };
                   };
@@ -444,8 +448,9 @@ if(board[i][j]=="DB"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool white_queen_move_test=validate_white_queen_move(i, j, k, l);
-if(white_queen_move_test==true){
+bool white_queen_move_test1=validate_white_queen_move(i, j, k, l);
+bool white_queen_move_test2=white_piece_pinned(i, j, k, l);
+if(white_queen_move_test1==true && white_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -460,7 +465,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                 };
 
                   };
                   };
@@ -501,8 +506,9 @@ if(board[i][j]=="PP"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool black_pawn_move_test=validate_black_pawn_move(i, j, k, l);
-if(black_pawn_move_test==true){
+bool black_pawn_move_test1=validate_black_pawn_move(i, j, k, l);
+bool black_pawn_move_test2=black_piece_pinned(i, j, k, l);
+if(black_pawn_move_test1==true && black_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -517,7 +523,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                };
 
                   };
                   };
@@ -527,8 +533,9 @@ if(board[i][j]=="CP"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool black_knight_move_test=validate_black_knight_move(i, j, k, l);
-if(black_knight_move_test==true){
+bool black_knight_move_test1=validate_black_knight_move(i, j, k, l);
+bool black_knight_move_test2=black_piece_pinned(i, j, k, l);
+if(black_knight_move_test1==true && black_knight_move_test1==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -543,7 +550,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                                };
+                                                                   };
 
                   };
                   };
@@ -554,8 +561,9 @@ if(board[i][j]=="BP"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool black_bishop_move_test=validate_black_bishop_move(i, j, k, l);
-if(black_bishop_move_test==true){
+bool black_bishop_move_test1=validate_black_bishop_move(i, j, k, l);
+bool black_bishop_move_test2=black_piece_pinned(i, j, k, l);
+if(black_bishop_move_test1==true && black_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -570,7 +578,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                    };
 
                   };
                   };
@@ -581,8 +589,9 @@ if(board[i][j]=="TP"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool black_rook_move_test=validate_black_rook_move(i, j, k, l);
-if(black_rook_move_test==true){
+bool black_rook_move_test1=validate_black_rook_move(i, j, k, l);
+bool black_rook_move_test2=black_piece_pinned(i, j, k, l);
+if(black_rook_move_test1==true && black_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -597,7 +606,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                };
 
                   };
                   };
@@ -607,8 +616,9 @@ if(board[i][j]=="DP"){
 for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
-bool black_queen_move_test=validate_black_queen_move(i, j, k, l);
-if(black_queen_move_test==true){
+bool black_queen_move_test1=validate_black_queen_move(i, j, k, l);
+bool black_queen_move_test2=black_piece_pinned(i, j, k, l);
+if(black_queen_move_test1==true && black_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 //SALVANDO O ESTADO ATUAL DO TABULEIRO
 save_state();
@@ -623,7 +633,7 @@ safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
 
-                              };
+                                                                  };
 
                   };
                   };
