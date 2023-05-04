@@ -27,7 +27,7 @@ int white_king_row, white_king_column, white_attacker_row, white_attacker_column
 int black_king_row, black_king_column, black_attacker_row, black_attacker_column;//COORDENADAS USADAS ṔARA CHECAR SE O REI DAS NEGRAS ESTÁ EM CHEQUE
 bool checkmate; //VARIÁVEL QUE DETERMINAR A CONDIÇÃO DE CHEQUE MATE
 bool draw_game;//VARIÁVEL QUE VERFICA SE HOUVE EMPATE NO JOGO
-bool resignation;//FUNÇÃO QUE PERMITE AO USUÁRIO DESISTIR DE UMA PARTIDA
+bool resignation;//VARIÁVEL QUE PERMITE AO USUÁRIO DESISTIR DE UMA PARTIDA
 bool white_en_passant, black_en_passant;//VARIÁVEIS PARA PERMITIR A CAPTURA EN PASSANT
 bool white_castle, black_castle;//VARIÁVEIS QUE DEFINEM SE O ROQUE FOI OU NÃO REALIZADO PELOS JOGADORES
 bool white_castle_checker1, white_castle_checker2, black_castle_checker1, black_castle_checker2;//VARIÁVEIS QUE CHECAM SE É POSSÍVEL OU NÃO FAZER O ROQUE CURTO(:-->1) OU LONGO(:-->2)
