@@ -181,7 +181,7 @@ break;
 for(i=1; i<8; i++){
 if((white_king_row-i)<0)
 break;
-if(board[white_king_row-i][white_king_column]!="TP" && board[white_king_row+i][white_king_column]!="DP" && board[white_king_row-i][white_king_column]!="  ")
+if(board[white_king_row-i][white_king_column]!="TP" && board[white_king_row-i][white_king_column]!="DP" && board[white_king_row-i][white_king_column]!="  ")
 break;
 if(board[white_king_row-i][white_king_column]=="TP" || board[white_king_row-i][white_king_column]=="DP"){
 white_king_in_check=true;
@@ -394,7 +394,7 @@ break;
 for(i=1; i<8; i++){
 if((black_king_row-i)<0)
 break;
-if(board[black_king_row-i][black_king_column]!="TB" && board[black_king_row+i][black_king_column]!="DB" && board[black_king_row-i][black_king_column]!="  ")
+if(board[black_king_row-i][black_king_column]!="TB" && board[black_king_row-i][black_king_column]!="DB" && board[black_king_row-i][black_king_column]!="  ")
 break;
 if(board[black_king_row-i][black_king_column]=="TB" || board[black_king_row-i][black_king_column]=="DB"){
 black_king_in_check=true;
