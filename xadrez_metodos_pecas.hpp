@@ -20,13 +20,13 @@ return false;
                                                                 };
 //MOVIMENTOS REGULARES DE PEÃO (+2,0) OU (+1, 0) 
 //CASA INICIAL 
-if(x1==1 && abs(x1-x2)<=2 && y1==y2 && board[x2][y2]=="  ")
+if(x1==1 && (x2-x1)<=2 && (x2-x1)>0 && y1==y2 && board[x2][y2]=="  ")
 return true;
-if(x1>1 && abs(x1-x2)<2 && y1==y2 && board[x2][y2]=="  ")
+if(x1>1 && (x2-x1)==1 && y1==y2 && board[x2][y2]=="  ")
 return true;
 
 //MOVIMENTO DE CAPTURA (+1,-1) OU (-1, +1)
-if(abs(x1-x2)==1 && abs(y1-y2)==1){
+if((x2-x1)==1 && abs(y1-y2)==1){
 if(board[x2][y2]=="TP" || board[x2][y2]=="BP" || board[x2][y2]=="CP" || board[x2][y2]=="DP" || board[x2][y2]=="PP")
 return true;
                                   };
@@ -49,11 +49,11 @@ bool chess_game::validate_black_pawn_move(int x1, int y1, int x2, int y2){
 if(x1<0 || x1>7 || y1<0 || y1>7 || x2<0 || x2>7 || y2<0 || y2>7){
 return false;
                                                                 };
-//MOVIMENTOS REGULARES DE PEÃO (+2,0) OU (+1, 0) 
+//MOVIMENTOS REGULARES DE PEÃO (-2,0) OU (-1, 0) 
 //CASA INICIAL 
-if(x1==6 && abs(x1-x2)<=2 && y1==y2 && board[x2][y2]=="  ")
+if(x1==6 && (x1-x2)<=2 && (x1-x2)>0 && y1==y2 && board[x2][y2]=="  ")
 return true;
-if(x1<6 && abs(x1-x2)<2 && y1==y2 && board[x2][y2]=="  ")
+if(x1<6 && (x1-x2)==1 && y1==y2 && board[x2][y2]=="  ")
 return true;
 //MOVIMENTO DE CAPTURA (+1,-1) OU (-1, +1)
 if(abs(x1-x2)==1 && abs(y1-y2)==1){
