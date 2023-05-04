@@ -56,7 +56,7 @@ return true;
 if(x1<6 && (x1-x2)==1 && y1==y2 && board[x2][y2]=="  ")
 return true;
 //MOVIMENTO DE CAPTURA (+1,-1) OU (-1, +1)
-if(abs(x1-x2)==1 && abs(y1-y2)==1){
+if((x1-x2)==1 && abs(y1-y2)==1){
 if(board[x2][y2]=="TB" || board[x2][y2]=="BB" || board[x2][y2]=="CB" || board[x2][y2]=="DB" || board[x2][y2]=="PB")
 return true;
                                   };
