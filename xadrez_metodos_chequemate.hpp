@@ -11,7 +11,56 @@
 #include"xadrez_classe.hpp"
 using namespace std;
 
-//****************************************************************************************************************************
+//***************************************************************************************************************************
+//FUNÇÕES QUE CHECAM SE UMA PEÇA ESTÁ CRAVADA DURANTE O TESTE DE CHEQUE MATE
+//BRANCAS
+bool chess_game::white_piece_pinned_checkmate(int x1, int y1, int x2, int y2){
+//VARIÁVEIS LOCAIS
+bool white_pin;
+
+//TESTANDO O TABULEIRO PRINCIPAL
+//EXECUTANDO O MOVIMENTO
+board[x2][y2]=board[x1][y1];
+board[x1][y1]="  ";
+
+//VERFICANDO SE O REI ESTÁ EM CHEQUE
+white_king_status();
+if(white_king_in_check==true)
+white_pin=true;
+if(white_king_in_check==false)
+white_pin=false;
+
+//RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
+partially_restore_state();
+
+//RESULTADO DO TESTE
+return white_pin;
+                                                                   };
+//NEGRAS
+bool chess_game::black_piece_pinned_checkmate(int x1, int y1, int x2, int y2){
+//VARIÁVEIS LOCAIS
+bool black_pin;
+
+//TESTANDO O TABULEIRO PRINCIPAL
+//EXECUTANDO O MOVIMENTO
+board[x2][y2]=board[x1][y1];
+board[x1][y1]="  ";
+
+//VERFICANDO SE O REI ESTÁ EM CHEQUE
+black_king_status();
+if(black_king_in_check==true)
+black_pin=true;
+if(black_king_in_check==false)
+black_pin=false;
+
+//RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
+partially_restore_state();
+
+//RESULTADO DO TESTE
+return black_pin;
+                                                                   };
+
+//***************************************************************************************************************************
 //FUNÇÕES QUE DETERMINAM SE É POSSÍVEL ESCAPAR DO CHEQUE COM UM MOVIMENTO DE REI
 //BRANCAS
 bool chess_game::white_check_king_escape(){
@@ -311,7 +360,7 @@ if(safe_moves_counter==0)
 status=false;
 return status;                                          };
 
-//****************************************************************************************************************************
+//***************************************************************************************************************************
 //FUNÇÕES QUE DETERMINAM SE É POSSÍVEL ESCAPAR DO CHEQUE COM UM MOVIMENTO DE PEÇA
 //BRANCAS
 bool chess_game::white_check_piece_escape(){
@@ -338,7 +387,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool white_pawn_move_test1=validate_white_pawn_move(i, j, k, l);
-bool white_pawn_move_test2=white_piece_pinned(i, j, k, l);
+bool white_pawn_move_test2=white_piece_pinned_checkmate(i, j, k, l);
 if(white_pawn_move_test1==true && white_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -364,7 +413,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool white_knight_move_test1=validate_white_knight_move(i, j, k, l);
-bool white_knight_move_test2=white_piece_pinned(i, j, k, l);
+bool white_knight_move_test2=white_piece_pinned_checkmate(i, j, k, l);
 if(white_knight_move_test1==true && white_knight_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -391,7 +440,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool white_bishop_move_test1=validate_white_bishop_move(i, j, k, l);
-bool white_bishop_move_test2=white_piece_pinned(i, j, k, l);
+bool white_bishop_move_test2=white_piece_pinned_checkmate(i, j, k, l);
 if(white_bishop_move_test1==true && white_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -418,7 +467,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool white_rook_move_test1=validate_white_rook_move(i, j, k, l);
-bool white_rook_move_test2=white_piece_pinned(i, j, k, l);
+bool white_rook_move_test2=white_piece_pinned_checkmate(i, j, k, l);
 if(white_rook_move_test1==true && white_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -444,7 +493,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool white_queen_move_test1=validate_white_queen_move(i, j, k, l);
-bool white_queen_move_test2=white_piece_pinned(i, j, k, l);
+bool white_queen_move_test2=white_piece_pinned_checkmate(i, j, k, l);
 if(white_queen_move_test1==true && white_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -508,7 +557,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool black_pawn_move_test1=validate_black_pawn_move(i, j, k, l);
-bool black_pawn_move_test2=black_piece_pinned(i, j, k, l);
+bool black_pawn_move_test2=black_piece_pinned_checkmate(i, j, k, l);
 if(black_pawn_move_test1==true && black_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -535,7 +584,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool black_knight_move_test1=validate_black_knight_move(i, j, k, l);
-bool black_knight_move_test2=black_piece_pinned(i, j, k, l);
+bool black_knight_move_test2=black_piece_pinned_checkmate(i, j, k, l);
 if(black_knight_move_test1==true && black_knight_move_test1==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -562,7 +611,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool black_bishop_move_test1=validate_black_bishop_move(i, j, k, l);
-bool black_bishop_move_test2=black_piece_pinned(i, j, k, l);
+bool black_bishop_move_test2=black_piece_pinned_checkmate(i, j, k, l);
 if(black_bishop_move_test1==true && black_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -589,7 +638,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool black_rook_move_test1=validate_black_rook_move(i, j, k, l);
-bool black_rook_move_test2=black_piece_pinned(i, j, k, l);
+bool black_rook_move_test2=black_piece_pinned_checkmate(i, j, k, l);
 if(black_rook_move_test1==true && black_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
@@ -615,7 +664,7 @@ for(k=0; k<8; k++){
 for(l=0; l<8; l++){
 //BUSCA POR MOVIMENTOS VÁLIDOS
 bool black_queen_move_test1=validate_black_queen_move(i, j, k, l);
-bool black_queen_move_test2=black_piece_pinned(i, j, k, l);
+bool black_queen_move_test2=black_piece_pinned_checkmate(i, j, k, l);
 if(black_queen_move_test1==true && black_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
 
