@@ -344,6 +344,20 @@ for(j=0; j<8; ++j){
 board[i][j]=secondary_board[i][j];
                   };
                   };
+
 reset_board();//RESTAURANDO O STATUS PADRÃO DO TABULEIRO SECUNDÁRIO
+                       
+                                };
+
+//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL (CHEQUEMATE)
+void chess_game::partially_restore_state(){
+int i, j; //VARIÁVEIS LOCAIS
+
+//RESTAURANDO O TABULEIRO PRINCIPAL EM SEU ESTADO ORIGINAL 
+for(i=0; i<8; ++i){
+for(j=0; j<8; ++j){
+board[i][j]=secondary_board[i][j];
+                  };
+                  };
                        
                                 };
