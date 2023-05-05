@@ -23,11 +23,13 @@ safe_moves_counter=0;//AJUSTE DE VARIÁVEIS
 
 
 //PROCEDIMENTOS
+//REGISTRANDO O STATUS ATUAL DO TABULEIRO
+save_state();
+
 //UM REI POSSUI 8 POSSUI AO TODO 8 MOVIMENTOS POSSÍVEIS
 //(+1, +1)
 if(board[white_king_row+1][white_king_column+1]!="PB" && board[white_king_row+1][white_king_column+1]!="CB" && board[white_king_row+1][white_king_column+1]!="BB" && board[white_king_row+1][white_king_column+1]!="TB" && board[white_king_row+1][white_king_column+1]!="DB" && (white_king_row+1)<8 && (white_king_column+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row+1][white_king_column+1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -37,13 +39,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(+1, -1)
 if(board[white_king_row+1][white_king_column-1]!="PB" && board[white_king_row+1][white_king_column-1]!="CB" && board[white_king_row+1][white_king_column-1]!="BB" && board[white_king_row+1][white_king_column-1]!="TB" && board[white_king_row+1][white_king_column-1]!="DB" && (white_king_row+1)<8 && (white_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row+1][white_king_column-1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -53,13 +54,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(+1, 0)
 if(board[white_king_row+1][white_king_column]!="PB" && board[white_king_row+1][white_king_column]!="CB" && board[white_king_row+1][white_king_column]!="BB" && board[white_king_row+1][white_king_column]!="TB" && board[white_king_row+1][white_king_column]!="DB" && (white_king_row+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row+1][white_king_column]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -69,13 +69,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                          };
 //(-1, +1)
 if(board[white_king_row-1][white_king_column+1]!="PB" && board[white_king_row-1][white_king_column+1]!="CB" && board[white_king_row-1][white_king_column+1]!="BB" && board[white_king_row-1][white_king_column+1]!="TB" && board[white_king_row-1][white_king_column+1]!="DB"&& (white_king_row-1)>=0 && (white_king_column+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row-1][white_king_column+1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -85,13 +84,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                           };
 //(-1, -1)
 if(board[white_king_row-1][white_king_column-1]!="PB" && board[white_king_row-1][white_king_column-1]!="CB" && board[white_king_row-1][white_king_column-1]!="BB" && board[white_king_row-1][white_king_column-1]!="TB" && board[white_king_row-1][white_king_column-1]!="DB" && (white_king_row-1)>=0 && (white_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row-1][white_king_column-1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -101,13 +99,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                     };
 //(-1, 0)
 if(board[white_king_row-1][white_king_column]!="PB" && board[white_king_row-1][white_king_column]!="CB" && board[white_king_row-1][white_king_column]!="BB" && board[white_king_row-1][white_king_column]!="TB" && board[white_king_row-1][white_king_column]!="DB" && (white_king_row-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row-1][white_king_column]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -117,13 +114,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                           };
 //(0, -1)
 if(board[white_king_row][white_king_column-1]!="PB" && board[white_king_row][white_king_column-1]!="CB" && board[white_king_row][white_king_column-1]!="BB" && board[white_king_row][white_king_column-1]!="TB" && board[white_king_row][white_king_column-1]!="DB" && (white_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row][white_king_column-1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -133,13 +129,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                            };
 //(0, +1)
 if(board[white_king_row][white_king_column+1]!="PB" && board[white_king_row][white_king_column+1]!="CB" && board[white_king_row][white_king_column+1]!="BB" && board[white_king_row][white_king_column+1]!="TB" && board[white_king_row][white_king_column+1]!="DB" && (white_king_column+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[white_king_row][white_king_column+1]="RB";
 board[white_king_row][white_king_column]="  ";
@@ -149,9 +144,12 @@ if(white_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                            };
+
+//RESETANDO O TABULEIRO SECUNDÁRIO
+reset_board();
 
 //RESULTADO
 white_king_in_check=true;//VALOR ATUAL
@@ -176,11 +174,13 @@ safe_moves_counter=0;//AJUSTE DE VARIÁVEIS
 
 
 //PROCEDIMENTOS
+//REGISTRANDO O STATUS ATUAL DO TABULEIRO
+save_state();
+
 //UM REI POSSUI 8 POSSUI AO TODO 8 MOVIMENTOS POSSÍVEIS
 //(+1, +1)
 if(board[black_king_row+1][black_king_column+1]!="PP" && board[black_king_row+1][black_king_column+1]!="CP" && board[black_king_row+1][black_king_column+1]!="BP" && board[black_king_row+1][black_king_column+1]!="TP" && board[black_king_row+1][black_king_column+1]!="DP" && (black_king_row+1)<8 && (black_king_column+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row+1][black_king_column+1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -190,13 +190,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(+1, -1)
 if(board[black_king_row+1][black_king_column-1]!="PP" && board[black_king_row+1][black_king_column-1]!="CP" && board[black_king_row+1][black_king_column-1]!="BP" && board[black_king_row+1][black_king_column-1]!="TP" && board[black_king_row+1][black_king_column-1]!="DP" && (black_king_row+1)<8 && (black_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row+1][black_king_column-1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -206,13 +205,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(+1, 0)
 if(board[black_king_row+1][black_king_column]!="PP" && board[black_king_row+1][black_king_column]!="CP" && board[black_king_row+1][black_king_column]!="BP" && board[black_king_row+1][black_king_column]!="TP" && board[black_king_row+1][black_king_column]!="DP" && (black_king_row+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row+1][black_king_column]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -222,13 +220,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(-1, +1)
 if(board[black_king_row-1][black_king_column+1]!="PP" && board[black_king_row-1][black_king_column+1]!="CP" && board[black_king_row-1][black_king_column+1]!="BP" && board[black_king_row-1][black_king_column+1]!="TP" && board[black_king_row-1][black_king_column+1]!="DP" && (black_king_row-1)>=0 && (black_king_column+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row-1][black_king_column+1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -238,13 +235,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(-1, -1)
 if(board[black_king_row-1][black_king_column-1]!="PP" && board[black_king_row-1][black_king_column-1]!="CP" && board[black_king_row-1][black_king_column-1]!="BP" && board[black_king_row-1][black_king_column-1]!="TP" && board[black_king_row-1][black_king_column-1]!="DP"  && (black_king_row-1)>=0 && (black_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row-1][black_king_column-1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -254,13 +250,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(-1, 0)
 if(board[black_king_row-1][black_king_column]!="PP" && board[black_king_row-1][black_king_column]!="CP" && board[black_king_row-1][black_king_column]!="BP" && board[black_king_row-1][black_king_column]!="TP" && board[black_king_row-1][black_king_column]!="DP" && (black_king_row-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row-1][black_king_column]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -270,13 +265,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(0, -1)
 if(board[black_king_row][black_king_column-1]!="PP" && board[black_king_row][black_king_column-1]!="CP" && board[black_king_row][black_king_column-1]!="BP" && board[black_king_row][black_king_column-1]!="TP" && board[black_king_row][black_king_column-1]!="DP" && (black_king_column-1)>=0){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row][black_king_column-1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -286,13 +280,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
 //(0, +1)
 if(board[black_king_row][black_king_column+1]!="PP" && board[black_king_row][black_king_column+1]!="CP" && board[black_king_row][black_king_column+1]!="BP" && board[black_king_row][black_king_column+1]!="TP" && board[black_king_row][black_king_column+1]!="DP" && (black_king_row+1)<8){
-//REGISTRANDO O STATUS ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO DO REI 
 board[black_king_row][black_king_column+1]="RP";
 board[black_king_row][black_king_column]="  ";
@@ -302,9 +295,12 @@ if(black_king_in_check==false)
 safe_moves_counter++;
 
 //RESTAURANDO O TABULEIRO EM SUA CONFIGURAÇÃO INICIAL
-restore_state();
+partially_restore_state();
 
                                                    };
+
+//RESETANDO O TABULEIRO SECUNDÁRIO
+reset_board();
 
 //RESULTADO
 black_king_in_check=true;//VALOR ATUAL
@@ -326,6 +322,9 @@ int safe_moves_counter;
 bool status;
 
 //PROCEDIMENTOS 
+//SALVANDO O ESTADO ATUAL DO TABULEIRO
+save_state();
+
 //ESQUADRINHANDO O TABULEIRO
 for(i=0; i<8; i++){
 for(j=0; j<8; j++){
@@ -342,8 +341,7 @@ bool white_pawn_move_test1=validate_white_pawn_move(i, j, k, l);
 bool white_pawn_move_test2=white_piece_pinned(i, j, k, l);
 if(white_pawn_move_test1==true && white_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -353,7 +351,7 @@ if(white_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                 };
 
@@ -369,8 +367,7 @@ bool white_knight_move_test1=validate_white_knight_move(i, j, k, l);
 bool white_knight_move_test2=white_piece_pinned(i, j, k, l);
 if(white_knight_move_test1==true && white_knight_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -380,7 +377,7 @@ if(white_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                 };
 
@@ -397,8 +394,7 @@ bool white_bishop_move_test1=validate_white_bishop_move(i, j, k, l);
 bool white_bishop_move_test2=white_piece_pinned(i, j, k, l);
 if(white_bishop_move_test1==true && white_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -408,7 +404,7 @@ if(white_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                   };
 
@@ -425,8 +421,7 @@ bool white_rook_move_test1=validate_white_rook_move(i, j, k, l);
 bool white_rook_move_test2=white_piece_pinned(i, j, k, l);
 if(white_rook_move_test1==true && white_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -436,7 +431,7 @@ if(white_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                };
 
@@ -452,8 +447,7 @@ bool white_queen_move_test1=validate_white_queen_move(i, j, k, l);
 bool white_queen_move_test2=white_piece_pinned(i, j, k, l);
 if(white_queen_move_test1==true && white_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -463,7 +457,7 @@ if(white_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                  };
 
@@ -473,6 +467,10 @@ restore_state();
 
                   };
                   };
+
+
+//RESETANDO O TABULEIRO SECUNDÁRIO
+reset_board();
 
 //RESULTADO
 white_king_in_check=true;//VALOR ATUAL
@@ -494,6 +492,9 @@ int safe_moves_counter;
 bool status;
 
 //PROCEDIMENTOS 
+//SALVANDO O ESTADO ATUAL DO TABULEIRO
+save_state();
+
 //ESQUADRINHANDO O TABULEIRO
 for(i=0; i<8; i++){
 for(j=0; j<8; j++){
@@ -510,8 +511,7 @@ bool black_pawn_move_test1=validate_black_pawn_move(i, j, k, l);
 bool black_pawn_move_test2=black_piece_pinned(i, j, k, l);
 if(black_pawn_move_test1==true && black_pawn_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -521,13 +521,14 @@ if(black_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                 };
 
                   };
                   };
                      };
+
 //CAVALO
 if(board[i][j]=="CP"){
 for(k=0; k<8; k++){
@@ -537,8 +538,7 @@ bool black_knight_move_test1=validate_black_knight_move(i, j, k, l);
 bool black_knight_move_test2=black_piece_pinned(i, j, k, l);
 if(black_knight_move_test1==true && black_knight_move_test1==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -548,7 +548,7 @@ if(black_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                    };
 
@@ -565,8 +565,7 @@ bool black_bishop_move_test1=validate_black_bishop_move(i, j, k, l);
 bool black_bishop_move_test2=black_piece_pinned(i, j, k, l);
 if(black_bishop_move_test1==true && black_bishop_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -576,7 +575,7 @@ if(black_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                     };
 
@@ -593,8 +592,7 @@ bool black_rook_move_test1=validate_black_rook_move(i, j, k, l);
 bool black_rook_move_test2=black_piece_pinned(i, j, k, l);
 if(black_rook_move_test1==true && black_rook_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -604,7 +602,7 @@ if(black_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                 };
 
@@ -620,8 +618,7 @@ bool black_queen_move_test1=validate_black_queen_move(i, j, k, l);
 bool black_queen_move_test2=black_piece_pinned(i, j, k, l);
 if(black_queen_move_test1==true && black_queen_move_test2==false){
 //CHECANDO SE UM MOVIMENTO VÁLIDO RETIRA O REI DO CHEQUE
-//SALVANDO O ESTADO ATUAL DO TABULEIRO
-save_state();
+
 //TESTANDO O MOVIMENTO VÁLIDO
 board[k][l]=board[i][j];
 board[i][j]="  ";
@@ -631,7 +628,7 @@ if(black_king_in_check==false)
 safe_moves_counter++; //CONTABILIZANDO MOVIMENTOS QUE RETIRAM O REI DO CHEQUE
 
 //RESTAURANDO O ESTADO DO TABULEIRO
-restore_state();
+partially_restore_state();
 
                                                                   };
 
@@ -641,6 +638,9 @@ restore_state();
 
                   };
                   };
+
+//RESETANDO O TABULEIRO SECUNDÁRIO
+reset_board();
 
 //RESULTADO
 black_king_in_check=true;//VALOR ATUAL
@@ -652,7 +652,7 @@ status=false;
 return status;
                                            };
 
-//****************************************************************************************************************************
+//***************************************************************************************************************************
 //FUNÇÕES QUE DETERMINA SE É CHEQUE MATE OU NÃO
 //BRANCAS
 bool chess_game::white_checkmate_checker(){
