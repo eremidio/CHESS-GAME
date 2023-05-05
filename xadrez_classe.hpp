@@ -77,6 +77,8 @@ bool validate_black_king_move(int, int, int, int);
 //FUNÇÕES QUE CALCULAM SE UMA PEÇA ESTÁ CRAVADA OU NÃO (REALIZANDO UM TESTE)
 bool white_piece_pinned(int, int, int, int);
 bool black_piece_pinned(int, int, int, int);
+bool white_piece_pinned_checkmate(int, int, int, int);//TESTE DE CHEQUEMATE
+bool black_piece_pinned_checkmate(int, int, int, int);
 
 //FUNÇÕES QUE VALIDAM A CAPTURA EN PASSANT
 bool white_en_passant_checker(int, int, int, int);
