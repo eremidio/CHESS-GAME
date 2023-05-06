@@ -31,7 +31,6 @@ bool resignation;//VARIÁVEL QUE PERMITE AO USUÁRIO DESISTIR DE UMA PARTIDA
 bool white_en_passant, black_en_passant;//VARIÁVEIS PARA PERMITIR A CAPTURA EN PASSANT
 bool white_castle, black_castle;//VARIÁVEIS QUE DEFINEM SE O ROQUE FOI OU NÃO REALIZADO PELOS JOGADORES
 bool white_castle_checker1, white_castle_checker2, black_castle_checker1, black_castle_checker2;//VARIÁVEIS QUE CHECAM SE É POSSÍVEL OU NÃO FAZER O ROQUE CURTO(:-->1) OU LONGO(:-->2)
-bool white_turn, black_turn; //VARIÁVEIS USADAS PARA SE DECIDIR A ORDEM DAS JOGADAS
 
 //CONSTRUTOR E DESTRUIDORES
 ~chess_game();
@@ -52,7 +51,6 @@ void white_pieces_counter();//FUNÇÃO QUE CHECA SE HOUVE CAPTURA DE ALGUMA PEÇ
 void black_pieces_counter();// "      "     "   "   "       "    "     "    "   "  NEGRAS  
 void save_state(); //FUNÇÃO QUE CÓPIA O TABULEIRO PRINCIPAL NO TABULEIRO SECUNDÁRIO
 void restore_state();//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL E RESETA O TABULEIRO SECUNDÁRIO
-void partially_restore_state();//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL (CHEQUEMATE)
 
 //CHEQUE
 void white_king_status();//FUNÇÃO QUE CHECA SE OS REIS DA BRANCA ESTÃO EM CHEQUE
@@ -77,8 +75,6 @@ bool validate_black_king_move(int, int, int, int);
 //FUNÇÕES QUE CALCULAM SE UMA PEÇA ESTÁ CRAVADA OU NÃO (REALIZANDO UM TESTE)
 bool white_piece_pinned(int, int, int, int);
 bool black_piece_pinned(int, int, int, int);
-bool white_piece_pinned_checkmate(int, int, int, int);//TESTE DE CHEQUEMATE
-bool black_piece_pinned_checkmate(int, int, int, int);
 
 //FUNÇÕES QUE VALIDAM A CAPTURA EN PASSANT
 bool white_en_passant_checker(int, int, int, int);
@@ -104,10 +100,8 @@ void black_to_move();
 
 
 //CHEQUE MATE
-bool white_check_piece_escape();
-bool black_check_piece_escape();
-bool white_check_king_escape();
-bool black_check_king_escape();
+bool white_test_for_check(int, int, int, int);
+bool black_test_for_check(int, int, int, int);
 bool white_checkmate_checker();
 bool black_checkmate_checker();
 void checkmate_warning();
@@ -174,8 +168,6 @@ checkmate=false;
 draw_game=false;
 white_en_passant=false;
 black_en_passant=false;
-white_turn=false;
-black_turn=false;
 white_castle=false;
 black_castle=false;
 white_castle_checker1=true;
