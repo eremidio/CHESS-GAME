@@ -147,8 +147,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_king_test1=validate_white_king_move(i, j, k, l);
 bool white_king_test2=white_piece_pinned(i, j, k, l);
-if(white_king_test1==true && white_king_test2==false)
+if(white_king_test1==true && white_king_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                     };
                   };
                   };
                      };
@@ -158,8 +160,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_pawn_test1=validate_white_pawn_move(i, j, k, l);
 bool white_pawn_test2=white_piece_pinned(i, j, k, l);
-if(white_pawn_test1==true && white_pawn_test2==false)
+if(white_pawn_test1==true && white_pawn_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                     };
                   };
                   };
                      };
@@ -169,8 +173,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_knight_test1=validate_white_knight_move(i, j, k, l);
 bool white_knight_test2=white_piece_pinned(i, j, k, l);
-if(white_knight_test1==true && white_knight_test2==false)
+if(white_knight_test1==true && white_knight_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                         };
                   };
                   };
                      };
@@ -180,8 +186,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_bishop_test1=validate_white_bishop_move(i, j, k, l);
 bool white_bishop_test2=white_piece_pinned(i, j, k, l);
-if(white_bishop_test1==true && white_bishop_test2==false)
+if(white_bishop_test1==true && white_bishop_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                         };
                   };
                   };
                      };
@@ -191,8 +199,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_rook_test1=validate_white_rook_move(i, j, k, l);
 bool white_rook_test2=white_piece_pinned(i, j, k, l);
-if(white_rook_test1==true && white_rook_test2==false)
+if(white_rook_test1==true && white_rook_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                     };
                   };
                   };
                      };
@@ -202,8 +212,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool white_queen_test1=validate_white_queen_move(i, j, k, l);
 bool white_queen_test2=white_piece_pinned(i, j, k, l);
-if(white_queen_test1==true && white_queen_test2==false)
+if(white_queen_test1==true && white_queen_test2==false){
+if(white_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                       };
                   };
                   };
                      };
@@ -214,6 +226,9 @@ allowable_moves++;
 //RESULTADO
 if(allowable_moves==0)
 draw_game=true;
+
+//TESTE 1 USE UM /**/ APÓS O TESTE
+/*cout<<"Afogamento brancas: "<< draw_game<<"\n";*/
 
                                        };
 //NEGRAS
@@ -234,8 +249,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_king_test1=validate_black_king_move(i, j, k, l);
 bool black_king_test2=black_piece_pinned(i, j, k, l);
-if(black_king_test1==true && black_king_test2==false)
+if(black_king_test1==true && black_king_test2==false){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                     };
                   };
                   };
                      };
@@ -245,8 +262,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_pawn_test1=validate_black_pawn_move(i, j, k, l);
 bool black_pawn_test2=black_piece_pinned(i, j, k, l);
-if(black_pawn_test1==true && black_pawn_test2==false)
+if(black_pawn_test1==true && black_pawn_test2==false){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                     };
                   };
                   };
                      };
@@ -256,8 +275,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_knight_test1=validate_black_knight_move(i, j, k, l);
 bool black_knight_test2=black_piece_pinned(i, j, k, l);
-if(black_knight_test1==true && black_knight_test2==false)
+if(black_knight_test1==true && black_knight_test2==false){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                         };
                   };
                   };
                      };
@@ -267,8 +288,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_bishop_test1=validate_black_bishop_move(i, j, k, l);
 bool black_bishop_test=black_piece_pinned(i, j, k, l);
-if(black_bishop_test1==true && black_bishop_test1==false)
+if(black_bishop_test1==true && black_bishop_test1==false){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                         };
                   };
                   };
                      };
@@ -278,8 +301,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_rook_test1=validate_black_rook_move(i, j, k, l);
 bool black_rook_test2=black_piece_pinned(i, j, k, l);
-if(black_rook_test1==true && black_rook_test2==false )
+if(black_rook_test1==true && black_rook_test2==false ){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                      };
                   };
                   };
                      };
@@ -289,8 +314,10 @@ for(k=0; k<8; ++k){
 for(l=0; l<8; ++l){
 bool black_queen_test1=validate_black_queen_move(i, j, k, l);
 bool black_queen_test2=black_piece_pinned(i, j, k, l);
-if(black_queen_test1==true && black_queen_test2==false)
+if(black_queen_test1==true && black_queen_test2==false){
+if(black_test_for_check(i, j, k, l)==false)
 allowable_moves++;
+                                                       };
                   };
                   };
                      };
@@ -302,9 +329,12 @@ allowable_moves++;
 if(allowable_moves==0)
 draw_game=true;
 
+//TESTE 1 USE UM /**/ APÓS O TESTE
+/*cout<<"Afogamento negras: "<< draw_game<<"\n";*/
+
                                        };
 
-//****************************************************************************************************************************
+//***************************************************************************************************************************
 //FUNÇÃO QUE INFORMA SE HOUVE EMPATE NO JOGO
 void chess_game::draw_warning(){
 cout<<"Jogo terminou empatado!\n";
