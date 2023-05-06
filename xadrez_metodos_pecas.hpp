@@ -167,7 +167,7 @@ return false;
                       };
 
 //DIAGONAL INFERIOR ESQUERDA(-1, -1)
-if(gap_v<0 && gap_h>0){
+if(gap_v<0 && gap_h<0){
 for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1-i]!="  "){
 return false;
@@ -229,7 +229,7 @@ return false;
                       };
 
 //DIAGONAL INFERIOR ESQUERDA(-1, -1)
-if(gap_v<0 && gap_h>0){
+if(gap_v<0 && gap_h<0){
 for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1-i]!="  "){
 return false;
@@ -445,9 +445,12 @@ return false;
 bool chess_game::white_piece_pinned(int x1, int y1, int x2, int y2){
 //VARIÁVEIS LOCAIS
 bool white_pin;
+bool king_state;
 
 //REGISTRANDO O STATUS DO TABULEIRO
 save_state();
+king_state=white_king_in_check;
+
 //TESTANDO O TABULEIRO PRINCIPAL
 //EXECUTANDO O MOVIMENTO
 board[x2][y2]=board[x1][y1];
@@ -462,7 +465,7 @@ white_pin=false;
 
 //RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
 restore_state();
-white_king_in_check=false;//VALOR PADRÃO (SE O REI ESTIVER EM CHEQUE ESTE TESTE NÃO É REALIZADO)
+white_king_in_check=king_state;
 
 //RESULTADO DO TESTE
 return white_pin;
@@ -471,9 +474,12 @@ return white_pin;
 bool chess_game::black_piece_pinned(int x1, int y1, int x2, int y2){
 //VARIÁVEIS LOCAIS
 bool black_pin;
+bool king_state;
 
 //REGISTRANDO O STATUS DO TABULEIRO
 save_state();
+king_state=black_king_in_check;
+
 //TESTANDO O TABULEIRO PRINCIPAL
 //EXECUTANDO O MOVIMENTO
 board[x2][y2]=board[x1][y1];
@@ -488,7 +494,7 @@ black_pin=false;
 
 //RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
 restore_state();
-black_king_in_check=false;//VALOR PADRÃO (SE O REI ESTIVER EM CHEQUE ESTE TESTE NÃO É REALIZADO)
+black_king_in_check=king_state;
 
 //RESULTADO DO TESTE
 return black_pin;
@@ -499,7 +505,7 @@ return black_pin;
 bool chess_game::white_en_passant_checker(int x1, int y1, int x2, int y2){
 /*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS BRANCAS: PEÃO DAS NEGRAS ->(-2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if(abs(x2-x1)==2 && board[x1][y1]=="PP" && (board[x2][y2+1]=="PB" || board[x2][y2+1]=="PB")){
+if((x1-x2)==2 && board[x1][y1]=="PP" && (board[x2][y2+1]=="PB" || board[x2][y2+1]=="PB")){
 white_en_passant=true;
                                                                                             };
 
@@ -509,7 +515,7 @@ return white_en_passant;
 bool chess_game::black_en_passant_checker(int x1, int y1, int x2, int y2){
 /*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS NEGRAS: PEÃO DAS BRANCAS ->(+2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if(abs(x2-x1)==2 && board[x1][y1]=="PB"){
+if((x2-x1)==2 && board[x1][y1]=="PB"){
 if(board[x2][y2+1]=="PP" || board[x2][y2+1]=="PP")
 black_en_passant=true;
                                                    };
