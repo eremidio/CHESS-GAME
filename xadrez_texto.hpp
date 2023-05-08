@@ -7,7 +7,7 @@ using namespace std;
 
 //***************************************************************************************************************************
 
-//CABEÇALHO
+//CABEÇALHO DO JOGO E EXPLICAÇÃO DE COMO USÁ-LO
 void introduction(){
 printf("\n");
 printf("\033[94m\033[01m  CCCCC  HH   HH EEEEEEE  SSSSS   SSSSS  \n\033[0m");
@@ -77,5 +77,4 @@ printf("\033[34m\033[05m\033[01m     JJJ OO   OO GG      AA   AA RRRRRR     !!! 
 printf("\033[34m\033[05m\033[01m JJ  JJJ OO   OO GG   GG AAAAAAA RR  RR                                                   \n\033[0m");        
 printf("\033[34m\033[05m\033[01m  JJJJJ   OOOO0   GGGGGG AA   AA RR   RR    !!! !!! !!!  \n\n\033[0m");        
               };
-
 
