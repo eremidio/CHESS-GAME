@@ -677,7 +677,7 @@ board[7][5]="TP";
 board[7][7]="  ";
 reset_board();
 move_list.push_back("o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
-black_castle=true;//ATUZALINDO A VARIÁVEL
+black_castle=true;//ATUALIZANDO A VARIÁVEL
                };
 
 //CASO A CONDIÇÃO ACIMA NÃO SEJA SATISFEITA RETORNAR O TABULEIRO A SUA CONDIÇÃO INICIAL
