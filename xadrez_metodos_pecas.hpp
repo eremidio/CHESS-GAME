@@ -5,6 +5,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<array>
 #include<cmath>
 #include"xadrez_classe.hpp"
 using namespace std;
@@ -416,6 +417,9 @@ if(x1<0 || x1>7 || y1<0 || y1>7 || x2<0 || x2>7 || y2<0 || y2>7){
 return false;
                                                                 };
 
+if(abs(x2-x1)==0 && abs(y2-y1)==0)
+return false;
+
 //REIS MOVEM-SE UMA CASA EM QUALQUER DIREÇÃO MAS NÃO PULAM PARA UMA CASA OCUPADA PELAS PRÓPRIAS PEÇAS
 if(abs(x2-x1)<2 && abs(y2-y1)<2 && board[x2][y2]!="DB" && board[x2][y2]!="TB" && board[x2][y2]!="CB" && board[x2][y2]!="BB" && board[x2][y2]!="PB")
 return true;
@@ -430,6 +434,8 @@ bool chess_game::validate_black_king_move(int x1, int y1, int x2, int y2){
 if(x1<0 || x1>7 || y1<0 || y1>7 || x2<0 || x2>7 || y2<0 || y2>7){
 return false;
                                                                 };
+if(abs(x2-x1)==0 && abs(y2-y1)==0)
+return false;
 
 //REIS MOVEM-SE UMA CASA EM QUALQUER DIREÇÃO MAS NÃO PULAM PARA UMA CASA OCUPADA PELAS PRÓPRIAS PEÇAS
 if(abs(x2-x1)<2 && abs(y2-y1)<2 && board[x2][y2]!="DP" && board[x2][y2]!="TP" && board[x2][y2]!="CP" && board[x2][y2]!="BP" && board[x2][y2]!="PP")
@@ -465,6 +471,7 @@ white_pin=false;
 
 //RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
 restore_state();
+reset_board();
 white_king_in_check=king_state;
 
 //RESULTADO DO TESTE
@@ -494,31 +501,53 @@ black_pin=false;
 
 //RETORNANDO OS TABULEIROS DO JOGO AO SEU ESTADO NORMAL
 restore_state();
+reset_board();
 black_king_in_check=king_state;
 
 //RESULTADO DO TESTE
 return black_pin;
                                                                    };
-//****************************************************************************************************************************
+//***************************************************************************************************************************
 //FUNÇÕES QUE CHECAM SE A CAPTURA EN PASSANT É POSSIVEL
 //BRANCAS
 bool chess_game::white_en_passant_checker(int x1, int y1, int x2, int y2){
-/*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS BRANCAS: PEÃO DAS NEGRAS ->(-2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if((x1-x2)==2 && board[x1][y1]=="PP" && (board[x2][y2+1]=="PB" || board[x2][y2+1]=="PB")){
+//TESTE USE UM /**/ APÓS O TESTE
+/*cout<<"x1: "<<x1<<"\n";
+cout<<"y1: "<<y1<<"\n";
+cout<<"x2: "<<x2<<"\n";
+cout<<"y2: "<<y2<<"\n";
+cout<<"board[x1][y1]: "<<board[x1][y1]<<"\n";
+cout<<"board[x2][y2-1]: "<<board[x2][y2-1]<<"\n";
+cout<<"board[x2][y2+1]: "<<board[x2][y2+1]<<"\n";*/
+
+/*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS BRANCAS: PEÃO DAS NEGRAS ->(-2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
+if(x1==6 && x2==4){
+if(board[x2][y2+1]=="PB" || board[x2][y2-1]=="PB")
 white_en_passant=true;
-                                                                                            };
+                  };
+
 
 return white_en_passant;
                                                                          };
+
 //NEGRAS
 bool chess_game::black_en_passant_checker(int x1, int y1, int x2, int y2){
-/*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS NEGRAS: PEÃO DAS BRANCAS ->(+2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
 
-if((x2-x1)==2 && board[x1][y1]=="PB"){
-if(board[x2][y2+1]=="PP" || board[x2][y2+1]=="PP")
+//TESTE USE UM /**/ APÓS O TESTE
+/*cout<<"x1: "<<x1<<"\n";
+cout<<"y1: "<<y1<<"\n";
+cout<<"x2: "<<x2<<"\n";
+cout<<"y2: "<<y2<<"\n";
+cout<<"board[x1][y1]: "<<board[x1][y1]<<"\n";
+cout<<"board[x2][y2-1]: "<<board[x2][y2-1]<<"\n";
+cout<<"board[x2][y2+1]: "<<board[x2][y2+1]<<"\n";*/
+
+/*CHECANDO SE AS CONDIÇÕES DE CAPTURA EM PASSANT SÃO SATISFEITAS PARA AS BRANCAS: PEÃO DAS NEGRAS ->(-2, 0) A PARTIR DA CASA INICIAL E HÁ UM PEÃO DAS BRANCAS NAS CASAS ADJACENTES ESQUERDA (0, -1) OU DIREITA (0, +1)*/
+if(x1==1 && x2==3){
+if(board[x2][y2+1]=="PP" || board[x2][y2-1]=="PP")
 black_en_passant=true;
-                                                   };
+                  };
 return black_en_passant;
                                                                          };
 
@@ -545,6 +574,7 @@ test1=false;
 if(test1==false){
 white_castle=false;
 restore_state();
+reset_board();
 return;
                 };
 //EXECUTANDO O MOVIMENTO COM O REI
@@ -588,6 +618,7 @@ if(test2==false){
 white_castle=false;
 white_king_in_check=false; //VALOR PADRÃO
 restore_state();
+reset_board();
 return;
                 };
                                      };
@@ -612,6 +643,7 @@ test1=false;
 if(test1==false){
 black_castle=false;
 restore_state();
+reset_board();
 return;
                 };
 //EXECUTANDO O MOVIMENTO COM O REI
@@ -655,6 +687,7 @@ if(test2==false){
 white_castle=false;
 white_king_in_check=false; //VALOR PADRÃO
 restore_state();
+reset_board();
 return;
                 };
                                      };
@@ -681,6 +714,7 @@ test1=false;
 if(test1==false){
 white_castle=false;
 restore_state();
+reset_board();
 return;
                 };
 
@@ -725,6 +759,7 @@ if(test2==false){
 white_castle=false;
 white_king_in_check=false; //VALOR PADRÃO
 restore_state();
+reset_board();
 return;
                 };
                                     };
@@ -792,6 +827,7 @@ if(test2==false){
 black_castle=false;
 black_king_in_check=false; //VALOR PADRÃO
 restore_state();
+reset_board();
 return;
                 };
                                     };
@@ -855,8 +891,8 @@ void chess_game::white_en_passant_capture(){
 index3();
 index2();
 //EXECUTANDO O MOVIMENTO DE CAPTURA EN PASSANT
-board[row1][column1]="  ";
 board[row2][column2]=board[row1][column1];
+board[row1][column1]="  ";
 board[row2-1][column2]="  ";
 
 nor_pawn_capture=0;//ATUALIZANDO VARIÁVEL
@@ -873,8 +909,8 @@ void chess_game::black_en_passant_capture(){
 index3();
 index2();
 //EXECUTANDO O MOVIMENTO DE CAPTURA EN PASSANT
-board[row1][column1]="  ";
 board[row2][column2]=board[row1][column1];
+board[row1][column1]="  ";
 board[row2+1][column2]="  ";
 
 nor_pawn_capture=0;//ATUALIZANDO VARIÁVEL
@@ -897,11 +933,16 @@ if(white_king_in_check==true){
 white_check_warning();
 //CHECANDO O CHEQUE MATE
 bool end_game=white_checkmate_checker();//VARIÁVEL LOCAL
-if(checkmate==true){
-checkmate_warning();
+if(checkmate==true)
 return;
-                   };
                              };
+
+//OBSERVANDO SE AS BRANCAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS NEGRAS
+bool white_en_passant_test = white_en_passant_checker(row1, column1, row2, column2);
+
+//TESTE 3, USE /**/ APÓS O TESTE
+/*cout<<"white_en_passant: "<<white_en_passant<<"\n";*/
+
 
 //CASO NÃO SEJA CHEQUE MATE O JOGADOR DE BRANCAS REALIZA O SEU LANCE
 white_move:
@@ -917,6 +958,7 @@ if(initial_square=="en" && white_en_passant==true){
 white_en_passant_capture();
 return;
                                                   };
+
 //EM CASO DE FALHA DA CAPTURA EN PASSANT INFORMAR AO USUÁRIO
 if(initial_square=="en" && white_en_passant==false){
 cout<<"Movimento inválido!\n";
@@ -1010,8 +1052,7 @@ nor_pawn_capture++;
 if(board[row2][column2]=="PB" && row2==7)
 promote_white_pawn();
 
-//OBSERVANDO SE AS NEGRAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS BRANCAS
-bool test3 = black_en_passant_checker(row1, column1, row2, column2);
+
 if(white_en_passant==true)
 white_en_passant=false;//ATUALIZANDO VARIÁVEL
 
@@ -1057,6 +1098,11 @@ checkmate_warning();
 return;
                   };
                              };
+
+
+//OBSERVANDO SE AS NEGRAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS BRANCAS
+bool black_en_passant_test = black_en_passant_checker(row1, column1, row2, column2);
+
 
 //CASO NÃO SEJA CHEQUE MATE O JOGADOR DE NEGRAS REALIZA O SEU LANCE
 black_move:
@@ -1162,11 +1208,9 @@ nor_pawn_capture++;
 if(board[row2][column2]=="PP" && row2==0)
 promote_black_pawn();
 
-
-//OBSERVANDO SE AS BRANCAS PODEM FAZER A CAPTURA EN PASSANT APÓS O MOVIMENTO DAS NEGRAS
-bool test3 = white_en_passant_checker(row1, column1, row2, column2);
+//ATUALIZANDO VARIÁVEL
 if(black_en_passant==true)
-black_en_passant=false;//ATUALIZANDO VARIÁVEL
+black_en_passant=false;
 
 //TESTE5, USE UM /**/ APÓS O TESTE
 /*cout<<"white_en_passant"<< white_en_passant<<"\n";*/
