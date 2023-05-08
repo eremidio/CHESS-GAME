@@ -7,6 +7,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<array>
 #include<vector>
 #include"xadrez_classe.hpp"
 using namespace std;
@@ -37,6 +38,7 @@ result=false;
 
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
+reset_board();
 white_king_in_check=king_state;
 
 //RESULTADO
@@ -68,6 +70,7 @@ result=false;
 
 //RESTAURANDO O ESTADO DO TABULEIRO
 restore_state();
+reset_board();
 black_king_in_check=king_state;
 
 //RESULTADO
@@ -80,11 +83,8 @@ return result;
 //BRANCAS
 bool chess_game::white_checkmate_checker(){
 white_stalemate_draw();
-if(draw_game==true)
+if(draw_game==true && white_king_in_check==true)
 checkmate=true;
-if(draw_game==false)
-checkmate=false;
-
 return checkmate;
                                           };
 
@@ -92,10 +92,8 @@ return checkmate;
 bool chess_game::black_checkmate_checker(){
 black_stalemate_draw();
 
-if(draw_game==true)
+if(draw_game==true && black_king_in_check==true)
 checkmate=true;
-if(draw_game==false)
-checkmate=false;
 
 //RESULTADO
 return checkmate;
