@@ -5,6 +5,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<array>
 #include<vector>
 using namespace std;
 
@@ -50,7 +51,7 @@ int evaluate_black_pieces();// "      "    "   " "   "   "    "    "    "  NEGRA
 void white_pieces_counter();//FUNÇÃO QUE CHECA SE HOUVE CAPTURA DE ALGUMA PEÇA DAS BRANCAS
 void black_pieces_counter();// "      "     "   "   "       "    "     "    "   "  NEGRAS  
 void save_state(); //FUNÇÃO QUE CÓPIA O TABULEIRO PRINCIPAL NO TABULEIRO SECUNDÁRIO
-void restore_state();//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL E RESETA O TABULEIRO SECUNDÁRIO
+void restore_state();//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL
 
 //CHEQUE
 void white_king_status();//FUNÇÃO QUE CHECA SE OS REIS DA BRANCA ESTÃO EM CHEQUE
