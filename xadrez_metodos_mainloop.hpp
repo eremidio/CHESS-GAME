@@ -26,11 +26,6 @@ while(true){
 white_to_move();
 print_board();
 
-//EM CASO DE EMPATE OU CHEQUE O JOGO É ENCERRADO
-//CHEQUEMATE
-if(checkmate==true)
-break;
-
 //EMPATE
 //PROPONDO EMPATE POR REPETIÇÃO
 cout<<"::: (Pressione enter para continuar, digite 'e' para propor empate ou digite 'a' para para abandonar o jogo) ";
@@ -53,19 +48,18 @@ repetition_draw();
 insufficient_material_draw();
 black_stalemate_draw();
 
+//EM CASO DE EMPATE OU CHEQUEMATE O JOGO É ENCERRADO
 if(draw_game==true){
+if(white_king_in_check==false && black_king_in_check==false)
 draw_warning();
+if(white_king_in_check==true || black_king_in_check==true)
+checkmate_warning();
 break;
                    };
 
 //CASO NÃO HAJA EMPATE OU CHEQUEMATE AS NEGRAS FAZEM O SEU LANCE
 black_to_move();
 print_board();
-
-//EM CASO DE EMPATE OU CHEQUE O JOGO É ENCERRADO
-//CHEQUEMATE
-if(checkmate==true)
-break;
 
 //EMPATE
 //PROPONDO EMPATE POR REPETIÇÃO
@@ -76,6 +70,8 @@ if(bd=='e')
 common_agreement_draw();
 if(bd=='a')
 resignate();
+
+
 //ABANDONANDO O JOGO
 if(resignation==true)
 break;
@@ -86,8 +82,13 @@ fifth_rule_draw();
 repetition_draw();
 insufficient_material_draw();
 white_stalemate_draw();
+
+//EM CASO DE EMPATE OU CHEQUEMATE O JOGO É ENCERRADO
 if(draw_game==true){
+if(white_king_in_check==false && black_king_in_check==false)
 draw_warning();
+if(white_king_in_check==true || black_king_in_check==true)
+checkmate_warning();
 break;
                    };
 
