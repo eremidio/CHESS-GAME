@@ -223,6 +223,9 @@ allowable_moves++;
                   };
                   };
 
+//CHECANDO SE O REI ESTÁ EM CHEQUE
+white_king_status();
+
 //RESULTADO
 if(allowable_moves==0)
 draw_game=true;
@@ -231,6 +234,8 @@ draw_game=true;
 /*cout<<"Afogamento brancas: "<< draw_game<<"\n";*/
 
                                        };
+
+
 //NEGRAS
 void chess_game::black_stalemate_draw(){
 //VARIAVEIS LOCAIS
@@ -324,6 +329,9 @@ allowable_moves++;
 
                   };
                   };
+
+//CHECANDO SE O REI ESTÁ EM CHEQUE
+black_king_status();
 
 //RESULTADO
 if(allowable_moves==0)
