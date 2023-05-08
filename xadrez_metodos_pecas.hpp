@@ -675,7 +675,6 @@ test2=true;
 if(test2==true){
 board[7][5]="TP";
 board[7][7]="  ";
-white_castle=true;
 reset_board();
 move_list.push_back("o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
 black_castle=true;//ATUZALINDO A VARIÁVEL
@@ -684,8 +683,8 @@ black_castle=true;//ATUZALINDO A VARIÁVEL
 //CASO A CONDIÇÃO ACIMA NÃO SEJA SATISFEITA RETORNAR O TABULEIRO A SUA CONDIÇÃO INICIAL
 not_castle:
 if(test2==false){
-white_castle=false;
-white_king_in_check=false; //VALOR PADRÃO
+black_castle=false;
+black_king_in_check=false; //VALOR PADRÃO
 restore_state();
 reset_board();
 return;
