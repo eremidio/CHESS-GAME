@@ -5,6 +5,7 @@
 /*CABEÇALHO*/
 #pragma once
 #include<iostream>
+#include<array>
 #include"xadrez_classe.hpp"
 using namespace std;
 
