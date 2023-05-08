@@ -6,6 +6,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<array>
 #include<stdio.h>
 #include<cstdio>
 #include<cstdlib>
@@ -344,8 +345,4 @@ for(j=0; j<8; ++j){
 board[i][j]=secondary_board[i][j];
                   };
                   };
-
-reset_board();//RESTAURANDO O STATUS PADRÃO DO TABULEIRO SECUNDÁRIO
-                       
                                 };
-
