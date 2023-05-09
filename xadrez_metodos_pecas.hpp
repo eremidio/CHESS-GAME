@@ -606,7 +606,6 @@ test2=true;
 if(test2==true){
 board[0][5]="TB";
 board[0][7]="  ";
-white_castle=true;
 reset_board();
 move_list.push_back("o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
 white_castle=true;//ATUALIZANDO O STATUS DO ROQUE
@@ -746,7 +745,6 @@ test2=true;
 if(test2==true){
 board[0][3]="TB";
 board[0][0]="  ";
-white_castle=true;
 reset_board();
 move_list.push_back("o-o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
 white_castle=true;//ATUALIZANDO A VARIÁVEL
@@ -814,7 +812,6 @@ test2=true;
 if(test2==true){
 board[7][3]="TB";
 board[7][0]="  ";
-black_castle=true;
 reset_board();
 move_list.push_back("o-o-o");//ATUALIZANDO A LISTA DE MOVIMENTOS
 black_castle=true;//ATUALIZANDO A VARIÁVEL
