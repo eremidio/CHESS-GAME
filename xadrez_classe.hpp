@@ -18,16 +18,16 @@ public:
 string board[8][8];//TABULEIRO PRINCIPAL
 string secondary_board[8][8];//TABULEIRO SECUNDÁRIO
 int row1, row2, column1, column2; //COORDENADAS DAS CASAS DA PEÇA (INICIAL--:> 1, FINAL --:>2)
-int nor_pawn_capture;//VÁRIAVEL USANDA PARA SE CONTABILIZAR CAPTURA DE PEÇAS OU AVANÇOS DE PEÃO
+int nor_pawn_capture;//VÁRIAVEL USADA PARA SE CONTABILIZAR CAPTURA DE PEÇAS OU AVANÇOS DE PEÃO
 string initial_square, final_square;//STRINGS QUE ALOCAM AS POSIÇÕES DAS PEÇAS
 int white_evaluation1, white_evaluation2, black_evaluation1, black_evaluation2;//VALORES DAS PEÇAS DE AMBOS DOS JOGADORES
 vector<string> move_list;//LISTA QUE ALOCA O MOVIMENTO DAS PEÇAS
 bool white_king_in_check, black_king_in_check;//VARIÁVEL QUE INDICA SE O REI ESTÁ EM CHEQUE OU NÃO
 string white_attacker, black_attacker; //SÍMBOLO DAS PEÇAS QUE ATACAM O (APLICAM CHEQUE AO) REI
-int white_king_row, white_king_column, white_attacker_row, white_attacker_column;//COORDENADAS USADAS ṔARA CHECAR SE O REI DAS BRANCAS ESTÁ EM CHEQUE
-int black_king_row, black_king_column, black_attacker_row, black_attacker_column;//COORDENADAS USADAS ṔARA CHECAR SE O REI DAS NEGRAS ESTÁ EM CHEQUE
-bool checkmate; //VARIÁVEL QUE DETERMINAR A CONDIÇÃO DE CHEQUE MATE
-bool draw_game;//VARIÁVEL QUE VERFICA SE HOUVE EMPATE NO JOGO
+int white_king_row, white_king_column, white_attacker_row, white_attacker_column;//COORDENADAS USADAS PARA CHECAR SE O REI DAS BRANCAS ESTÁ EM CHEQUE
+int black_king_row, black_king_column, black_attacker_row, black_attacker_column;//COORDENADAS USADAS PARA CHECAR SE O REI DAS NEGRAS ESTÁ EM CHEQUE
+bool checkmate; //VARIÁVEL QUE DETERMINA A CONDIÇÃO DE CHEQUE MATE
+bool draw_game;//VARIÁVEL QUE VERIFICA SE HOUVE EMPATE NO JOGO
 bool resignation;//VARIÁVEL QUE PERMITE AO USUÁRIO DESISTIR DE UMA PARTIDA
 bool white_en_passant, black_en_passant;//VARIÁVEIS PARA PERMITIR A CAPTURA EN PASSANT
 bool white_castle, black_castle;//VARIÁVEIS QUE DEFINEM SE O ROQUE FOI OU NÃO REALIZADO PELOS JOGADORES
@@ -54,8 +54,8 @@ void save_state(); //FUNÇÃO QUE CÓPIA O TABULEIRO PRINCIPAL NO TABULEIRO SECU
 void restore_state();//FUNÇÃO QUE RETORNA O ESTADO SALVO NO TABULEIRO SECUNDÁRIO NO TABULEIRO PRINCIPAL
 
 //CHEQUE
-void white_king_status();//FUNÇÃO QUE CHECA SE OS REIS DA BRANCA ESTÃO EM CHEQUE
-void black_king_status();//  "     "    "    "  "  "    " NEGRAS   "    "   "
+void white_king_status();//FUNÇÃO QUE CHECA SE  O REI DAS BRANCAS ESTÃO EM CHEQUE
+void black_king_status();//  "     "    "    "  "  "   "  NEGRAS    "    "   "
 void white_check_warning();//FUNÇÃO QUE INFORMA SE O REI DAS BRANCAS ESTÁ EM CHEQUE 
 void black_check_warning();//  "     "    "      " "  "   "  NEGRAS    "   "   "
 
