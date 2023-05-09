@@ -275,7 +275,7 @@ return false;
            };
 //BAIXO(-1, 0)
 if(gap_v<0){
-for(i=0; i<abs(gap_v); ++i){
+for(i=1; i<abs(gap_v); ++i){
 if(board[x1-i][y1]!="  "){
 return false;
                          };
